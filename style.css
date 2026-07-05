@@ -20,16 +20,33 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background-color: var(--ivory);
-  background-image: url("assets/contours_bg.png");
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 1100px auto;
-  background-attachment: fixed;
   color: var(--navy);
   font-family: var(--font);
   font-size: 17px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 1100px;
+  height: 1100px;
+  background-image: url("assets/contours_bg.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  opacity: 0.28;
+  z-index: 0;
+  pointer-events: none;
+}
+
+header.site-head, main, footer.site-foot {
+  position: relative;
+  z-index: 1;
 }
 
 a { color: var(--navy); text-decoration: none; }
@@ -64,31 +81,31 @@ header.site-head {
   gap: 14px;
 }
 .brand img {
-  height: 40px;
-  width: 40px;
+  height: 48px;
+  width: 48px;
   object-fit: contain;
 }
 .brand-name {
   font-family: var(--font);
-  font-size: 21px;
+  font-size: 26px;
   font-weight: 600;
   color: var(--navy);
 }
 .brand-name small {
   display: block;
   font-family: var(--font);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.02em;
   color: var(--navy-soft);
-  margin-top: 2px;
+  margin-top: 3px;
 }
-nav.primary { display: flex; gap: 34px; }
+nav.primary { display: flex; gap: 38px; }
 nav.primary a {
   font-family: var(--font);
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   color: var(--navy-soft);
   padding-bottom: 4px;
   border-bottom: 1px solid transparent;
@@ -232,12 +249,18 @@ h2.section-title {
 .member-bio { font-size: 16px; color: var(--navy); max-width: 620px; margin: 0; }
 
 /* ---------- data privacy / contact panel ---------- */
+.panel-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
 .contact-panel {
   border: 1px solid var(--navy-hair);
   padding: 36px 40px;
   background: rgba(255, 253, 246, 0.55);
-  max-width: 480px;
 }
+.contact-panel p { font-size: 16px; color: var(--navy); line-height: 1.6; }
 .contact-panel dl {
   margin: 0;
   display: grid;
@@ -261,35 +284,11 @@ footer.site-foot {
   margin-top: 40px;
   padding: 32px 0 40px;
 }
-.foot-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.foot-name {
-  font-family: var(--font);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--navy-soft);
-}
-footer .foot-nav { display: flex; gap: 26px; }
-footer .foot-nav a {
-  font-family: var(--font);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--navy-soft);
-}
-footer .foot-nav a:hover { color: var(--gold-text); }
 footer .legal {
   font-family: var(--font);
-  font-size: 13px;
+  font-size: 16px;
   color: var(--navy-soft);
   text-align: center;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--navy-hair);
 }
 
 /* ---------- responsive ---------- */
@@ -304,5 +303,6 @@ footer .legal {
   .standards li:last-child { border-bottom: none; }
   .board-member { grid-template-columns: 1fr; }
   .portrait-frame { width: 160px; }
-  body { background-size: 800px auto; }
+  .panel-row { grid-template-columns: 1fr; }
+  body::before { width: 800px; height: 800px; }
 }
