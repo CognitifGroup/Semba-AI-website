@@ -91,15 +91,6 @@ header.site-head {
   font-weight: 600;
   color: var(--navy);
 }
-.brand-name small {
-  display: block;
-  font-family: var(--font);
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: var(--navy-soft);
-  margin-top: 3px;
-}
 nav.primary { display: flex; gap: 38px; }
 nav.primary a {
   font-family: var(--font);
