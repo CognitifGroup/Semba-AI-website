@@ -7,13 +7,14 @@
 :root {
   --ivory: #F6F1E3;
   --ivory-deep: #EFE8D5;
-  --navy: #16233B;
-  --navy-soft: #2C3B57;
-  --navy-hair: rgba(22, 35, 59, 0.16);
+  --navy: #1E3358;
+  --navy-soft: #3A4E70;
+  --navy-hair: rgba(30, 51, 88, 0.18);
   --gold: #A9843C;
   --gold-soft: #C7A45E;
+  --gold-text: #644718;
   --gold-faint: rgba(169, 132, 60, 0.35);
-  --paper-shadow: rgba(22, 35, 59, 0.08);
+  --paper-shadow: rgba(30, 51, 88, 0.08);
 
   --font-display: "Fraunces", "Iowan Old Style", serif;
   --font-body: "Source Serif 4", "Georgia", serif;
@@ -52,10 +53,11 @@ img { max-width: 100%; display: block; }
 /* ---------- coordinate eyebrow ---------- */
 .coord {
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-text);
 }
 
 /* ---------- header ---------- */
@@ -94,9 +96,9 @@ header.site-head {
 .brand-name small {
   display: block;
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--gold-text);
   font-weight: 500;
   margin-top: 2px;
 }
@@ -135,7 +137,7 @@ nav.primary a[aria-current="page"] {
 }
 .hero .lede {
   font-size: 19px;
-  max-width: 620px;
+  max-width: 780px;
   color: var(--navy-soft);
   margin: 0 0 8px;
 }
@@ -156,10 +158,11 @@ h2.section-title {
 }
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-text);
   margin: 0 0 12px;
   display: block;
 }
@@ -210,9 +213,10 @@ h2.section-title {
 .standards li:last-child { border-right: none; }
 .standards .ref {
   font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--gold);
-  letter-spacing: 0.06em;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gold-text);
+  letter-spacing: 0.05em;
   display: block;
   margin-bottom: 8px;
 }
@@ -252,25 +256,27 @@ h2.section-title {
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  filter: grayscale(1) contrast(1.05) brightness(1.02) sepia(0.18) hue-rotate(170deg) saturate(0.9);
-  mix-blend-mode: normal;
 }
 .portrait-frame .frame-coord {
   position: absolute;
-  bottom: 8px;
-  left: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px 10px;
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 10.5px;
   letter-spacing: 0.08em;
-  color: var(--gold-soft);
+  color: #F0E4C8;
+  background: rgba(30, 51, 88, 0.72);
   text-transform: uppercase;
 }
 .member-role {
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-text);
   margin: 0 0 6px;
 }
 .member-name {
@@ -295,38 +301,42 @@ h2.section-title {
   background: rgba(255, 253, 246, 0.55);
   max-width: 480px;
 }
-.contact-panel .coord { margin-bottom: 14px; display: block; }
-.contact-panel dl { margin: 0; }
+.contact-panel .coord { margin-bottom: 20px; display: block; }
+.contact-panel dl {
+  margin: 0;
+  display: grid;
+  row-gap: 20px;
+}
+.contact-panel .field { display: grid; row-gap: 5px; }
 .contact-panel dt {
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-size: 12px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-top: 18px;
+  color: var(--gold-text);
+  margin: 0;
 }
-.contact-panel dt:first-child { margin-top: 0; }
-.contact-panel dd { margin: 4px 0 0; font-size: 16px; color: var(--navy); }
+.contact-panel dd { margin: 0; font-size: 16px; color: var(--navy); }
 
 /* ---------- footer ---------- */
 footer.site-foot {
   border-top: 1px solid var(--navy-hair);
   margin-top: 40px;
-  padding: 40px 0 52px;
+  padding: 32px 0 40px;
 }
 .foot-inner {
   display: flex;
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: center;
 }
-.foot-inner .coord { margin-bottom: 8px; display: block; }
-footer address {
-  font-style: normal;
-  font-size: 13.5px;
+.foot-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--navy-soft);
-  line-height: 1.6;
 }
 footer .foot-nav { display: flex; gap: 26px; }
 footer .foot-nav a {
@@ -336,13 +346,16 @@ footer .foot-nav a {
   text-transform: uppercase;
   color: var(--navy-soft);
 }
-footer .foot-nav a:hover { color: var(--gold); }
+footer .foot-nav a:hover { color: var(--gold-text); }
 footer .legal {
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--navy-soft);
-  opacity: 0.7;
-  margin-top: 28px;
+  opacity: 0.75;
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--navy-hair);
 }
 
 /* ---------- responsive ---------- */
